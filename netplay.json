@@ -16,6 +16,7 @@
         "$Required: Slippi Recording",
         "$Required: Slippi Online",
         "$Recommended: Normal Lag Reduction",
+        "$Recommended: Apply Delay to all In-Game Scenes",
         "",
         "[Gecko]"
       ]
@@ -36,6 +37,7 @@
         "$Required: Slippi Recording",
         "$Required: Slippi Online",
         "$Recommended: Normal Lag Reduction",
+        "$Recommended: Apply Delay to all In-Game Scenes",
         "",
         "[Gecko]"
       ]
@@ -324,6 +326,12 @@
           "type": "binary",
           "sourceFile": "Binary/LagReduction/PD+VB.bin",
           "annotation": "Polling Drift Fix + VB [tauKhan]"
+        },
+        {
+          "type": "injectFolder",
+          "sourceFolder": "Common/FastForward",
+          "isRecursive": true,
+          "annotation": "Functions for supporting FFW [Fizzi, Unclepunch]"
         }
       ]
     },
@@ -339,6 +347,30 @@
         {
           "type": "binary",
           "sourceFile": "Binary/NormalLagReduction.bin"
+        }
+      ]
+    },
+    {
+      "name": "Recommended: Apply Delay to all In-Game Scenes",
+      "authors": [
+        "Fizzi"
+      ],
+      "description": [
+        "Applies online delay to all in-game scenes.",
+        "Dolphin netplay is no longer necessary for local practice"
+      ],
+      "build": [
+        {
+          "type": "injectFolder",
+          "sourceFolder": "Common/UseInGameDelay",
+          "isRecursive": true,
+          "annotation": "Main codes"
+        },
+        {
+          "type": "injectFolder",
+          "sourceFolder": "Common/GetCommonMinorID",
+          "isRecursive": true,
+          "annotation": "Static function for obtaining common minor ID"
         }
       ]
     },
